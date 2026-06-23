@@ -52,15 +52,23 @@
         }
         
         header {
-            padding: 1.5rem 4rem;
+            padding: 0.875rem 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--ink-line);
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 100;
-            background: var(--ink);
+            background: var(--ink-raised);
+            border: 1px solid var(--ink-line);
+            border-radius: 999px;
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 18px 50px rgba(0,0,0,.45);
+            max-width: 90%;
+            width: fit-content;
         }
 
         nav {
@@ -125,10 +133,19 @@
         
         .tutorial-step {
             background: var(--ink-raised);
-            border: 2px solid var(--ink-line);
-            border-radius: 4px;
+            border: 1px solid var(--ink-line);
+            border-radius: 28px;
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 18px 50px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
             padding: 2rem;
-            box-shadow: 6px 6px 0 var(--ink);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .tutorial-step:hover {
+            transform: translateY(-4px);
+            border-color: rgba(34,211,238,.3);
+            box-shadow: 0 24px 60px rgba(34,211,238,.15), inset 0 1px 0 rgba(255,255,255,.08);
         }
 
         .step-number {
